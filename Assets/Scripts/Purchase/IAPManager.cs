@@ -37,6 +37,7 @@ public class IAPManager : MonoBehaviour, IStoreListener
 
     void Start()
     {
+		
         // If we haven't set up the Unity Purchasing reference
         if (m_StoreController == null)
         {
@@ -146,6 +147,9 @@ public class IAPManager : MonoBehaviour, IStoreListener
             // the Action<bool> below, and ProcessPurchase if there are previously purchased products to restore.
             apple.RestoreTransactions((result) =>
             {
+					DataManager.SaveVip(0);
+					GameController.instance.checkvip = 0;
+					PopUpController.instance.ShowBuyItem();
                 // The first phase of restoration. If no more responses are received on ProcessPurchase then 
                 // no purchases are available to be restored.
                 Debug.Log("RestorePurchases continuing: " + result + ". If no further messages, no purchases available to restore.");

@@ -1,13 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class ShareRate  {
 
-    public static string titleShare = "Violympic third grade math";
-    public static string LinkShare = "https://play.google.com/store/apps/details?id=toan.violympic.grade";
+    public static string titleShare = "Third grade math";
+    //public static string LinkShare = "https://play.google.com/store/apps/details?id=toan.violympic.grade";
+	public static string LinkShare = "https://itunes.apple.com/us/app/math-kids-third/id1210289259";
   
     public static void Share()
     {
+		#if UNITY_IPHONE
+		string facebookshare = "https://www.facebook.com/sharer/sharer.php?u=" + Uri.EscapeUriString(LinkShare);
+		Application.OpenURL(facebookshare);
+		#endif
         //execute the below lines if being run on a Android device
 #if UNITY_ANDROID
         //Refernece of AndroidJavaClass class for intent
