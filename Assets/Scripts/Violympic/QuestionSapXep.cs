@@ -195,7 +195,8 @@ public class QuestionSapXep : MonoBehaviour {
     }
     void doXuLy(SpItem bt)
     {
-
+		try
+		{
         if (currentState == State.InGame1)
         {
             if (bt.Trangthai == true)
@@ -210,6 +211,12 @@ public class QuestionSapXep : MonoBehaviour {
                 StartCoroutine(WaitTimeXuLySX(1f, bt));
             }
         }
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
     }
 
     IEnumerator WaitTimeXuLySX(float time, SpItem bt)
@@ -351,6 +358,8 @@ public class QuestionSapXep : MonoBehaviour {
 
     void GameOver()
     {
+		try
+		{
         currentState = State.Start;
         PopUpController.instance.HideQuestionSapXep();
         if (mDiemB1 < 0)
@@ -361,6 +370,12 @@ public class QuestionSapXep : MonoBehaviour {
         GameController.instance.sumTime += mTime;
         PopUpController.instance.ShowStopSapXep(mDiemB1, ClsThaoTac.CoverTimeToString(1200 - mTime));
         resetTL();
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
     }
     public void resetTL()
     {

@@ -39,8 +39,16 @@ public class Advertise : MonoBehaviour {
     }
     void onClick_Cancel()
     {
+		try
+		{
         PopUpController.instance.HideAdTriger();
         PopUpController.instance.ShowMainGame();
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
     }
 
     public void setData()
@@ -50,10 +58,18 @@ public class Advertise : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		try
+		{
         btnContinute.OnClick += onClick_Continute;
         btnCancel.OnClick += onClick_Cancel;
         txtTitle.text = ClsLanguage.doQuangCao();
         txtContent.text = ClsLanguage.doContenQuangCao();
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
 	}
 	
 	// Update is called once per frame

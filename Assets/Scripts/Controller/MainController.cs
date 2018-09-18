@@ -12,28 +12,53 @@ public class MainController : MonoBehaviour {
 
     void btnShare_OnClick()
     {
+		try
+		{
         ShareRate.Share();
         SoundManager.Instance.PlayAudioChoitiep();
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
     }
 
     void btnRate_OnClick()
     {
+		try
+		{
         ShareRate.Rate();
         SoundManager.Instance.PlayAudioChoitiep();
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
     }
 
 
 
     void btnBuyVip_OnClick()
     {
+		try
+		{
         PopUpController.instance.ShowBuyItem();
         PopUpController.instance.HideMainGame();
         SoundManager.Instance.PlayAudioChoitiep();
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
     }
 
     void btnRank_OnClick()
     {
-
+		try
+		{
         SoundManager.Instance.PlayAudioChoitiep();
         if (GameController.instance.vuotqua > 5)
         {
@@ -44,14 +69,28 @@ public class MainController : MonoBehaviour {
             PopUpController.instance.HideMainGame();
             PopUpController.instance.ShowAdTriger();
         }
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
     }
 
 
     void btnPlay_OnClick()
     {
+		try
+		{
         PopUpController.instance.HideMainGame();
         PopUpController.instance.ShowLevel();
         SoundManager.Instance.PlayAudioChoitiep();
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
 
     }
 
@@ -69,6 +108,8 @@ public class MainController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		try
+		{
         btnRank.OnClick += btnRank_OnClick;
         btnPlay.OnClick += btnPlay_OnClick;
         btnBuyVip.OnClick += btnBuyVip_OnClick;
@@ -82,6 +123,12 @@ public class MainController : MonoBehaviour {
         {
             btnBuyVip.gameObject.SetActive(false);
         }
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
 	}
 	
 	// Update is called once per frame

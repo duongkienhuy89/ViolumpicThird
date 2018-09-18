@@ -5,8 +5,8 @@ using System;
 public class ShareRate  {
 
     public static string titleShare = "Third grade math";
-    //public static string LinkShare = "https://play.google.com/store/apps/details?id=toan.violympic.grade";
-	public static string LinkShare = "https://itunes.apple.com/us/app/math-kids-third/id1210289259";
+    public static string LinkShare = "https://play.google.com/store/apps/details?id=toan.violympic.grade";
+	//public static string LinkShare = "https://itunes.apple.com/us/app/math-kids-third/id1210289259";
   
     public static void Share()
     {
